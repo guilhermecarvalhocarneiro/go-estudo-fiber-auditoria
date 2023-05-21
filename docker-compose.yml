@@ -1,0 +1,19 @@
+version: "3.7"
+
+networks:
+  go-api:
+
+services:
+  go-api:
+    container_name: go-fiber-api
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    working_dir: /go/src/app
+    networks:
+      - go-api
+    command: ["go", "run", "main.go"]
+    ports:
+      - "8484:3000"
+    expose:
+      - 3000

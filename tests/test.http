@@ -1,0 +1,58 @@
+###
+GET http://localhost:3000/api/v1/healtcheck
+
+### 
+GET http://localhost:3000/api/v1/auditoria
+
+### 
+GET http://localhost:3000/api/v1/auditoria/count/
+
+###
+GET http://localhost:3000/api/v1/auditoria/get/1
+
+### Create Auditoria
+POST http://localhost:3000/api/v1/auditoria
+Content-Type: application/json
+
+{
+    "nome_sistema": "Sistema 1",
+    "app_name": "App 1",
+    "modulo": "Modulo 1",
+    "operacao": "Operacao 1",
+    "usuario": {
+        "first_name": "John",
+        "last_name": "Doe"
+    },
+    "grupo": {
+        "nome": "Grupo 1"
+    },
+    "permissao": {
+        "nome": "Permissao 1"
+    },
+    "dado_anterior": {
+        "glossary": {
+            "title": "example glossary",
+            "GlossDiv": {
+                "title": "S",
+                "GlossList": {
+                    "GlossEntry": {
+                        "ID": "SGML",
+                        "SortAs": "SGML",
+                        "GlossTerm": "Standard Generalized Markup Language",
+                        "Acronym": "SGML",
+                        "Abbrev": "ISO 8879:1986",
+                        "GlossDef": {
+                            "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                            "GlossSeeAlso": ["GML", "XML"]
+                        },
+                        "GlossSee": "markup"
+                    }
+                }
+            }
+        }
+    },
+    "dado_atual": {
+        "nome": "Dado Atual 1"
+    },
+    "ip_address": "192.168.1.1"
+}   
